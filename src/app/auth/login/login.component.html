@@ -1,0 +1,70 @@
+<main class="element-login-loading">
+  <!-- Colonne gauche (identique au design centre opérationnel) -->
+  <section class="container">
+    <article class="content">
+      <header class="header">
+        <h1 class="text-wrapper">Lorem ipsum dolor sit amet consectetur.</h1>
+        <p class="div">
+          Lorem ipsum dolor sit amet consectetur. In urna non mattis odio et vel.
+        </p>
+      </header>
+      <img class="element-homepage" src="assets/img/23-homepage.png" alt="Homepage illustration" />
+    </article>
+  </section>
+
+  <!-- Colonne droite : formulaire de connexion -->
+  <aside class="container-2">
+    <img class="logo-NGE-rvb" src="assets/img/logo-nge-rvb-1.png" alt="NGE" />
+
+    <section class="login-form">
+      <header class="header-2">
+        <h2 class="text-wrapper-2">Login</h2>
+        <p class="p">Entrez votre email et mot de passe pour continuer</p>
+      </header>
+
+      <form [formGroup]="form" (ngSubmit)="submit()" class="form-container login-form-grid">
+        <!-- Email -->
+        <label class="field">
+          <span class="label">Email</span>
+          <input type="email" formControlName="email" placeholder="jean.dupont@exemple.com" />
+          <small class="error" *ngIf="form.controls.email.touched && form.controls.email.invalid">
+            Email invalide
+          </small>
+        </label>
+
+        <!-- Mot de passe -->
+        <label class="field">
+          <span class="label">Mot de passe</span>
+          <div class="password-wrap">
+            <input [type]="showPassword ? 'text' : 'password'"
+                   formControlName="password"
+                   placeholder="••••••••" />
+            <button type="button" class="toggle" (click)="showPassword = !showPassword"
+                    aria-label="Afficher/masquer le mot de passe">
+              {{ showPassword ? '🙈' : '👁️' }}
+            </button>
+          </div>
+          <small class="error" *ngIf="form.controls.password.touched && form.controls.password.invalid">
+            4 caractères minimum
+          </small>
+        </label>
+
+        <!-- Options -->
+        <div class="login-options">
+          <label class="remember">
+            <input type="checkbox" formControlName="remember" />
+            <span>Se souvenir de moi</span>
+          </label>
+          <a href="#" class="forgot">Forgot password?</a>
+        </div>
+
+        <!-- Bouton -->
+        <div class="button-container">
+          <button class="button-wrapper" type="submit" [disabled]="form.invalid">
+            <span class="button-3">Login</span>
+          </button>
+        </div>
+      </form>
+    </section>
+  </aside>
+</main>

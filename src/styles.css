@@ -1,0 +1,7 @@
+@import "assets/styles/globals.css";
+@import "assets/styles/styleguide.css";
+@import "assets/styles/style.css";
+
+:root { font-family: Inter, system-ui, Arial, sans-serif; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--tokens-bg-surface-default); }

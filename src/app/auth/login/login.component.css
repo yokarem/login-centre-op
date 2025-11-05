@@ -1,0 +1,51 @@
+/* grille du formulaire dans la colonne droite */
+.login-form-grid {
+  display: grid;
+  gap: 14px;
+}
+
+/* champs */
+.field { display: grid; gap: 6px; }
+.label {
+  font: var(--label-small-font-style) var(--label-small-font-weight) var(--label-small-font-size) / var(--label-small-line-height) var(--label-small-font-family);
+  color: var(--tokens-text-neutral-main);
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"],
+.login-form input[type="text"] {
+  border: 1px solid var(--tokens-stroke-neutral-soft);
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+  width: 100%;
+}
+
+.password-wrap { position: relative; display: flex; align-items: center; }
+.password-wrap input { flex: 1; }
+.password-wrap .toggle {
+  position: absolute; right: 8px;
+  background: transparent; border: none; cursor: pointer; font-size: 18px;
+}
+
+.login-options {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 2px;
+}
+.remember { display: inline-flex; gap: 8px; align-items: center; color: var(--tokens-text-neutral-sub); }
+.forgot { font-size: 12px; color: var(--foundations-primary-600); text-decoration: none; }
+
+.error { color: var(--foundations-red-600); font-size: 12px; }
+
+/* bouton principal (réutilise tes tokens) */
+.button-container { margin-top: 2px; }
+.button-wrapper {
+  border: 1px solid var(--tokens-stroke-state-primary);
+  background: linear-gradient(180deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,0) 100%), var(--foundations-primary-500);
+  border-radius: 10px;
+  height: 40px; width: 100%;
+  display: inline-flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.button-3 { color: var(--tokens-text-neutral-white); }
+button[disabled] { opacity: .6; cursor: not-allowed; }
